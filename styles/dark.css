@@ -1,13 +1,33 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --cover-img: url(../images/cover-image-dark.png); 
+  --bg-color: #000028;
+  --h1-text-color: #db00ff;
+  --h2-text-color: #000028;
+  --h3-text-color: var(--h2-text-color);
+  --main-text-color: #f1b2ce;
+  --header-text-color: var(--accent-color);
+  --accent-color: #ff0070;
+  --shadow-color: var(--accent-color);
+  --footer-shadow-color: var(--accent-color);
+  --button-hover-color: rgb(255 0 112/ 0.4);
+  --title-bg: var(--accent-color);
+  --button-active-color: var(--accent-color);
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+  --cover-img: url(../images/cover-image-dark.png); 
+  --bg-color: #000028;
+  --h1-text-color: #db00ff;
+  --h2-text-color: #000028;
+  --h3-text-color: var(--h2-text-color);
+  --header-text-color: var(--accent-color);
+  --main-text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --shadow-color: var(--accent-color);
+  --footer-shadow-color: var(--accent-color);
+  --button-hover-color: rgb(255 0 112/ 0.4);
+  --title-bg: var(--accent-color);
+  --button-active-color: var(--accent-color);
+  }
+}

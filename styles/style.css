@@ -1,15 +1,430 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   background-image: var(--cover-img);
-  background-repeat: no-repeat;
-  background-position: cover;
+  background-repeat: repeat;
+  background-position: center;
   background-attachment: fixed;
-  font-family: 'IBM Plex mono';
+  background-color: var(--bg-color, #000028);
 }
 
 .header {
   block-size: 100vh;
   min-block-size: 668px;
+  padding: 10px 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content 1fr;
+  font-size: var(--main-text-size, 1.125rem);
+}
+
+.header__decoration-sign {
+  position: absolute;
+  top: 10px;
+  right: 17px;
+  text-transform: uppercase;
+  align-self: self-end;
+  justify-self: right;
+  color: var(--accent-color, #ff0070);
+}
+
+.header__decoration-sign::after {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 0 0 7px;
+  background-color: var(--accent-color, #ff0070);
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+:root.theme-light .header__decoration-sign {
+  display: none;
+}
+
+.header.decorated-zone::after{
+  content: '';
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
+}
+
+.header.decorated-zone::before{
+  content: '';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
+}
+
+.header__theme-menu {
+  block-size: fit-content;
+  padding-inline-end: 10px;
+  align-self: center;
+  justify-self: right;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  font-size: inherit;
+  line-height: 100%;
+  color: var(--accent-color, #ff0070);
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  outline: 1px solid var(--button-active-color, rgb(255 0 112));
+}
+
+.header__theme-menu-button {
+  width: 70px;
+  height: 26px;
+  padding: 1.5px 13px;
+  text-transform: lowercase;
+  color: var(--header-text-color);
+}
+
+.header__theme-menu-button:active {
+  outline: 1px solid var(--button-active-color, rgb(255 0 112));
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-color, rgb(255 0 112/ 0.4));
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: solid 1px currentColor;
+}
+
+.header_title {
+  padding: 0 3%;
+  font-size: var(--h1-mobile-size, 7.25rem);
+  font-weight: bold;
+  line-height: var(--h1-line-height, 82.5%);
+  color: var(--h1-text-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--shadow-color, #ff0070);
+}
+
+.header_description {
+  margin: 15% 3%;
+}
+
+.main_info {
+  margin-block-start: 40px;
+  padding: var(--padding-body-mobile);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  font-size: var(--main-text-size, 1.125rem);
+}
+
+.main_info-title {
+  inline-size: 375px;
+  font-size: inherit;
+  color: var(--accent-color, #ff0070);
+}
+
+.title-decor {
+  height: fit-content;
+  font-weight: bold;
+  background-color: var(--title-bg, #ff0070);
+  color: var(--h2-text-color, #000028);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info_block-title {
+  font-size: inherit;
+}
+
+.block_title {
+  font-size: inherit;
+}
+
+.block_list-title {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+.info_text-block {
+  color: var(--main-text-color, #f1b2ce);
+}
+
+.info_link {
+  text-shadow: 1px 1px 0 var(--shadow-color, #ff0070);
+}
+
+.info_link:hover {
+  border-bottom: solid 1px var(--main-text-color);
+  text-underline-offset: 3px;
+}
+
+.info_text-block .info_link:focus-visible {
+  border-bottom: solid currentColor 1px;
+}
+
+.main_info-cards {
+  display: grid;
+  grid-template-columns: 355px;
+  gap: 20px;
+}
+
+.main_info_img-block {
+  min-block-size: 1400px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  block-size: 100vh;
+  min-block-size: 668px;
+  margin-block-start: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.footer.decorated-zone::before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.footer.decorated-zone::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
+}
+
+.footer_title {
+  font-size: var(--h1-size, 116px);
+  color: var(--h1-text-color, #db00ff);
+  text-shadow: 2px 2px 0 var(--footer-shadow-color, #ff0070);
+}
+
+@media (width >= 768px) {
+  .header {
+    min-block-size: 1024px;
+    padding: 20px 0;
+  }
+
+  .header__decoration-sign {
+    top: 20px; 
+    right: 7px;
+  }
+
+  .header.decorated-zone::after {
+    content: '';
+    left: 1px;
+    bottom: 25px;
+  }
+
+  .header.decorated-zone::before {
+    content: '';
+    top: 20px;
+    right: 0;
+  }
+
+  .header_title {
+    font-size: var(--h1-laptop-desktop-size);
+  }
+
+  .header_description {
+    justify-self: right;
+    align-self: self-end;
+    margin: 0 0 23% 50%;
+  }
+
+  .main_info {
+    margin-block-start: 60px;
+    padding:var(--padding-body-laptop-desktop);
+    gap: 80px;
+  }
+ 
+   .main_info-title {
+    inline-size: inherit;
+    grid-row: span 2;
+  }
+
+  .main_info-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resaize_main_info-cards {
+   display: flex;
+   flex-wrap: wrap;
+  }
+
+  .resaize_main_info-cards  .main_info-title {
+    width: calc(100% / 3);
+    grid-row: 1;
+  }
+
+  .card:nth-child(odd) {
+    min-inline-size: 472px;
+  }
+
+  .main_info-cards:nth-child(3) .card {
+    grid-column: 2;
+  }
+
+  .main_info_img-block {
+    min-block-size: 823px;
+    align-items: normal;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: min-content 192px 230px 318px;
+    gap: 20px;
+  }
+
+  .main_info_img-block .title-decor {
+    grid-column: span 3;
+  }
+  
+  .img_block-item:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .img_block-item:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .img_block-item:nth-child(4) {
+    grid-row: span 2;
+  }
+
+  .img_block-item:nth-child(6) {
+    grid-column: span 2;
+  }
+
+  .footer {
+    min-block-size: 1024px;
+    margin-block-start: 60px;
+  }
+
+  .footer.decorated-zone::after {
+    content: '';
+    left: 20px;
+    bottom: 20px;
+  }
+
+    .footer.decorated-zone::before {
+    content: '';
+    top: 20px;
+    right: 20px;
+  }
+
+
+  .footer_title {
+    font-size: var(--h4-laptop-desktop-size);
+  }
+
+}
+
+
+
+@media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: auto;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header_description {
+    margin: 0 0 12% 50%;
+  }
+
+  .main_info-cards {
+    grid-template-columns: 0.5fr 1fr;
+  }
+
+  .resaize_main_info-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(315px, 1fr));
+    grid-template-rows: min-content 1fr;
+ }
+
+ .card:nth-child(odd) {
+    min-inline-size: fit-content;
+ }
+
+  .main_info_img-block {
+    min-block-size: 1091px;
+    grid-template-rows: min-content 260px 315px 433px;
+  }
+
+  .resaize_main_info-cards .main_info-title {
+    grid-column: span 3;
+  }
+
+  .main_info_img-block .title-decor {
+    grid-column: span 3;
+  }
+  
+  .img_block-item:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .img_block-item:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .img_block-item:nth-child(4) {
+    grid-row: span 2;
+  }
+
+  .img_block-item:nth-child(6) {
+    grid-column: span 2;
+  }
+  
+  .footer {
+    min-block-size: 768px;
+  }
 }
