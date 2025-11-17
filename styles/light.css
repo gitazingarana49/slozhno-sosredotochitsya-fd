@@ -2,8 +2,9 @@
   --cover-img: url(../images/cover-image-light.png);
   --bg-color: #fff1f7;
   --accent-color: var(--main-text-color);
-  --h1-text-color: #ffc2e6;
-  --h2-text-color: #353430;
+  --main-title-color: #ffc2e6;
+  --section-title-color: #353430;
+  --footer-title-color: var(--main-title-color);
   --header-text-color: var(--main-text-color);
   --main-text-color: #353430;
   --shadow-color: #ff8dcb;
@@ -19,8 +20,9 @@
     --cover-img: url(../images/cover-image-light.png);
     --bg-color: #fff1f7;
     --accent-color: var(--main-text-color);
-    --h1-text-color: #ffc2e6;
-    --h2-text-color: #353430;
+    --main-title-color: #ffc2e6;
+    --section-title-color: #353430;
+    --footer-title-color: var(--main-title-color);
     --header-text-color: var(--main-text-color);
     --main-text-color: #353430;
     --shadow-color: #ff8dcb;
@@ -28,10 +30,6 @@
     --title-bg: #ff8dcb;
     --button-hover-color: rgb(50 49 45 / 0.4);
     --button-active-color: rgba(53, 52, 48, 1);
-  }
-
-  .header__decoration-sign {
-    display: none;
   }
 
 }

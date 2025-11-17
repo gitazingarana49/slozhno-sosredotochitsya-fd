@@ -1,9 +1,10 @@
 :root.theme-dark {
   --cover-img: url(../images/cover-image-dark.png); 
   --bg-color: #000028;
-  --h1-text-color: #db00ff;
-  --h2-text-color: #000028;
-  --h3-text-color: var(--h2-text-color);
+  --main-title-color: #db00ff;
+  --section-title-color: #000028;
+  --article-title-color: var(--section-title-color);
+  --footer-title-color: var(--main-title-color);
   --main-text-color: #f1b2ce;
   --header-text-color: var(--accent-color);
   --accent-color: #ff0070;
@@ -18,9 +19,10 @@
   :root {
   --cover-img: url(../images/cover-image-dark.png); 
   --bg-color: #000028;
-  --h1-text-color: #db00ff;
-  --h2-text-color: #000028;
-  --h3-text-color: var(--h2-text-color);
+  --main-title-color: #db00ff;
+  --section-title-color: #000028;
+  --article-title-color: var(--section-title-color);
+  --footer-title-color: var(--main-title-color);
   --header-text-color: var(--accent-color);
   --main-text-color: #f1b2ce;
   --accent-color: #ff0070;
