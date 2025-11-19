@@ -15,21 +15,6 @@
   --button-active-color: var(--accent-color);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  --cover-img: url(../images/cover-image-dark.png); 
-  --bg-color: #000028;
-  --main-title-color: #db00ff;
-  --section-title-color: #000028;
-  --article-title-color: var(--section-title-color);
-  --footer-title-color: var(--main-title-color);
-  --header-text-color: var(--accent-color);
-  --main-text-color: #f1b2ce;
-  --accent-color: #ff0070;
-  --shadow-color: var(--accent-color);
-  --footer-shadow-color: var(--accent-color);
-  --button-hover-color: rgb(255 0 112/ 0.4);
-  --title-bg: var(--accent-color);
-  --button-active-color: var(--accent-color);
-  }
+.theme-dark .header__decoration-sign {
+  display: inline;
 }

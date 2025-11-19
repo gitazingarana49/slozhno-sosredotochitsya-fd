@@ -11,8 +11,7 @@
   --footer-shadow-color: #ff0070;
   --title-bg: #ff8dcb;
   --button-hover-color: rgb(50 49 45 / 0.4);
-  --button-active-color: rgba(53, 52, 48, 1);
-  
+  --button-active-color: rgba(53, 52, 48, 1);  
 }
 
 @media (prefers-color-scheme: light) {
@@ -32,4 +31,11 @@
     --button-active-color: rgba(53, 52, 48, 1);
   }
 
+  .header__decoration-sign {
+  display: none;
+}
+}
+
+.theme-light .header__decoration-sign {
+  display: none;
 }

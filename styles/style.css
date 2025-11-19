@@ -39,11 +39,6 @@
   filter: blur(2px);
 }
 
-:root.theme-light .header__decoration-sign,
-:root.theme-auto .header__decoration-sign {
-  display: none;
-}
-
 .decorated-zone::after{
   content: '';
   position: absolute;
